@@ -17,10 +17,7 @@ namespace Sitecore.Support.ContentSearch.LuceneProvider
             try
             {
                 VerboseLogging.CrawlingLogDebug(() => "AddItemFields start");
-                if (this.Options.IndexAllFields)
-                {
-                    this.Indexable.LoadAllFields();
-                }
+                this.Indexable.LoadAllFields();
                 if (this.IsParallel)
                 {
                     ConcurrentQueue<Exception> exceptions = new ConcurrentQueue<Exception>();
